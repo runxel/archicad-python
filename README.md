@@ -15,6 +15,11 @@ Have a look on the [JSON interface](https://archicadapi.graphisoft.com/JSONInter
 ### See also 
 - [An example of Excel to Archicad transfer](https://github.com/poco2018/Archicad_Excel_transfer)
 
+The official [Style Guide](https://pep8.org/) for Python.
+[The Hitchhiker's Guide to Python](https://docs.python-guide.org/)  
+In a hurry? [Learn X in Y minutes](https://learnxinyminutes.com/docs/python/)  
+
+
 
 ## License
 If not stated otherwise all source code is distributed under the [BOML](LICENSE.md).  
