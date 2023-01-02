@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "archicad-python"
+version = "0.1.0"
+description = "All Python + Archicad"
+authors = ["Lucas Becker <runxel@users.noreply.github.com>"]
+license = "BOML"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+archicad = "^26.3000"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
