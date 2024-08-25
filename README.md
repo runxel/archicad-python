@@ -13,7 +13,7 @@ Get a decent editor like [VSCode](https://code.visualstudio.com/) to edit the sc
 Have a look on the [JSON interface](https://archicadapi.graphisoft.com/JSONInterfaceDocumentation/#Introduction) and [Python](https://archicadapi.graphisoft.com/archicadPythonPackage/archicad.html) documentation.
 
 ### See also 
-- [An example of Excel to Archicad transfer](https://github.com/poco2018/Archicad_Excel_transfer)
+- [KAA-MB]([https://github.com/poco2018/Archicad_Excel_transfer](https://github.com/KAA-MB/archicad-python-scripts-KAA))
 
 The official [Style Guide](https://pep8.org/) for Python.
 [The Hitchhiker's Guide to Python](https://docs.python-guide.org/)  
