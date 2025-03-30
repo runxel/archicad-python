@@ -31,9 +31,9 @@ propvallist_pname = [val.propertyValues[0].propertyValue.value for val in acc.Ge
 propvallist_pnumber = [val.propertyValues[0].propertyValue.value for val in acc.GetPropertyValuesOfElements(elem_all_zones, [prop_pnumber])]
 
 for i, elem in enumerate(elem_all_zones):
-    new_zonename = act.ElementPropertyValue(
-                elem.elementId, prop_zname, act.NormalStringPropertyValue(propvallist_pname[i]))
-    new_zonenumber = act.ElementPropertyValue(
-                elem.elementId, prop_znumber, act.NormalStringPropertyValue(propvallist_pnumber[i]))
-    # Zurückspielen der Eigenschaften
-    acc.SetPropertyValuesOfElements([new_zonename, new_zonenumber])
+	new_zonename = act.ElementPropertyValue(
+				elem.elementId, prop_zname, act.NormalStringPropertyValue(propvallist_pname[i]))
+	new_zonenumber = act.ElementPropertyValue(
+				elem.elementId, prop_znumber, act.NormalStringPropertyValue(propvallist_pnumber[i]))
+	# Zurückspielen der Eigenschaften
+	acc.SetPropertyValuesOfElements([new_zonename, new_zonenumber])
