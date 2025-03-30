@@ -16,7 +16,7 @@ acu = conn.utilities
 
 #### some basic config ####
 master_name = "A2 Querformat"  # the Master Layout you want to use
-parent_name = "Parent"         # Parent folder name
+parent_name = "Parent"  # Parent folder name
 
 lname = "New Layout"  # Name of the layout to be created
 # DIN A2 format size; always millimeter
@@ -24,27 +24,45 @@ lhor = 594
 lvert = 420
 lmargin_left = lmargin_top = lmargin_right = lmargin_bottom = 0
 # Declare the appropiate Layout Parameters (see API for more info)
-lparam = act.LayoutParameters(lhor, lvert,
-                                lmargin_left, lmargin_top, lmargin_right, lmargin_bottom,
-                                "", False, False, False, 1, 1, "", "", False, False)
+lparam = act.LayoutParameters(
+	lhor,
+	lvert,
+	lmargin_left,
+	lmargin_top,
+	lmargin_right,
+	lmargin_bottom,
+	"",
+	False,
+	False,
+	False,
+	1,
+	1,
+	"",
+	"",
+	False,
+	False,
+)
 # which tree to checkout: 'LayoutBook', 'PublisherSets', 'ViewMap'
-root_tree_loc = 'LayoutBook'
+root_tree_loc = "LayoutBook"
 
 # Retrieve the Root Item
 layoutbook_tree = acc.GetNavigatorItemTree(act.NavigatorTreeId(root_tree_loc))
 
-# Now a bit weird stuff:
-# For the FindInNavigatorItemTree function we need a criteria function, which gets called 
+# Now slightly weird stuff:
+# For the FindInNavigatorItemTree function we need a criteria function, which gets called
 #  with the item to check as only parameter.
 # We will then automatically loop over all items in the defined tree.
 # In this function we can decide if the current item adheres to our criteria,
 #  if so, we will return true.
 
+
 def findMaster(item: act.NavigatorItem):
-    return True if item.name == master_name else False
+	return True if item.name == master_name else False
+
 
 def findParent(item: act.NavigatorItem):
-    return True if item.name == parent_name else False
+	return True if item.name == parent_name else False
+
 
 list_master = acu.FindInNavigatorItemTree(layoutbook_tree.rootItem, findMaster)
 list_parent = acu.FindInNavigatorItemTree(layoutbook_tree.rootItem, findParent)
