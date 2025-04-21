@@ -1,6 +1,7 @@
 # Prints all built-in property names into a file
 
 from archicad import ACConnection
+from archicad.releases import Commands, Types, Utilities
 
 TO_FILE = False
 
@@ -8,7 +9,10 @@ TO_FILE = False
 conn = ACConnection.connect()
 assert conn
 
-acc = conn.commands
+acc: Commands = conn.commands
+acu: Utilities = conn.utilities
+act: Types = conn.types
+
 
 built_ins = acc.GetAllPropertyNames()
 
