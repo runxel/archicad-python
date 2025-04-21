@@ -1,17 +1,19 @@
 # Simplest example for creating a Layout in Archicad
-# BOML | runxel 2020
-# v1.0 | works in ac24.b3008
+# license: BOML • @runxel 2020
+# v1.0 • tested in AC24
 # create_layout.py
-# for <https://archicad-talk.graphisoft.com/viewtopic.php?f=23&t=70570#p315412>
+# for https://archicad-talk.graphisoft.com/viewtopic.php?f=23&t=70570#p315412
 
 from archicad import ACConnection
+from archicad.releases import Commands, Types, Utilities
 
 conn = ACConnection.connect()
-assert conn
+if not conn:
+	raise Exception("No Archicad instance running!")
 
-acc = conn.commands
-act = conn.types
-acu = conn.utilities
+acc: Commands = conn.commands
+acu: Utilities = conn.utilities
+act: Types = conn.types
 
 
 #### some basic config ####

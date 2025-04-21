@@ -4,24 +4,24 @@
 # license: BOML • @runxel 2025-03-30
 # v1.0 • tested in AC28
 # name_layout_by_content.py
-# for <https://community.graphisoft.com/t5/Documentation/Replace-Name-Layout-With-Drawing-Name-in/m-p/657506>
+# for https://community.graphisoft.com/t5/Documentation/Replace-Name-Layout-With-Drawing-Name-in/m-p/657506
 
-import archicad
+from archicad import ACConnection
+from archicad.releases import Commands, Types, Utilities
 
-try:
-	conn = archicad.ACConnection.connect()
-	assert conn
+conn = ACConnection.connect()
+if not conn:
+	raise Exception("No Archicad instance running!")
 
-	acc = conn.commands
-	act = conn.types
-	acu = conn.utilities
-
-except AssertionError:
-	raise RuntimeError("No Archicad instance running!")
-
+acc: Commands = conn.commands
+acu: Utilities = conn.utilities
+act: Types = conn.types
 
 subset_name = "TEST folder"
 # rename :	  ^^^^^^^^^^^^
+# It is probably good advice to limit the extent of this script, since –as stated above–
+# we can not know the kind of placed drawing.
+# Run the script wisely!
 # ------------------------- #
 
 layoutBookTree = acc.GetNavigatorItemTree(act.NavigatorTreeId("LayoutBook"))
